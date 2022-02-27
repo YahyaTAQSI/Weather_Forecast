@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <style type="text/css">
+      html {
+        height: 100%;
+      }
+      body {
+        height: 100%;
+        margin: 0;
+        background: #131921;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .city {
+        align-items: center;
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 40px 8%;
+        border-radius: 20px;
+        background: #1b1c25;
+        color: #e25a78;
+      }
+
+      .city-name {
+        font-size: 2em;
+      }
+      .button {
+        margin: 20px 0 0;
+        padding: 15px 30px;
+        background: #e25a78;
+        color: #000;
+        font-family: arial;
+        letter-spacing: 5px;
+        border-radius: 0.4rem;
+        text-decoration: none;
+        box-shadow: 0 0 15px #e25a78;
+        width: 40%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="city">
+      <h1>OFFLINE</h1>
+      <h2 class="city-name">
+        <span>Please go online to check the current weather.</span>
+      </h2>
+      <a href="javascript:location.reload();" class="button">RETRY</a>
+    </div>
+  </body>
+</html>
