@@ -93,7 +93,8 @@ function App() {
           `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=${selected}&appid=${APP_ID}`
         );
         const cityData = await cities.json();
-        setMaxMin(cityData?.hourly?.map((h) => Math.round(h?.temp)));
+
+        // setMaxMin(cityData?.hourly?.map((h) => Math.round(h?.temp)));
 
         setCities(cityData);
         setLoading(false);
@@ -122,9 +123,6 @@ function App() {
         },
       },
       y: {
-        min: Math.min(...maxMin?.slice(0, 12)),
-        max: Math.max(...maxMin?.slice(0, 12)),
-
         ticks: {
           color: "#ffffff",
         },
@@ -193,7 +191,7 @@ function App() {
               `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=${selected}&appid=${APP_ID}`
             );
             const cityData = await cities.json();
-            setMaxMin(cityData?.hourly?.map((h) => Math.round(h?.temp)));
+            // setMaxMin(cityData?.hourly?.map((h) => Math.round(h?.temp)));
             setCities(cityData);
           }
           setLoading(false);
@@ -211,6 +209,12 @@ function App() {
       className=" 2xl:text-2xl flex justify-center items-center flex-wrap w-full 
     h-screen overflow-y-scroll bg-[#131921] space-y-[8px]   p-1 scrollbar-hide"
     >
+      <div className="absolute w-full h-full bg-[#131921] z-10 flex justify-center items-center">
+        <h1 className="text-white">
+          We apologize, but this website is no longer operational due to API
+          issues.
+        </h1>
+      </div>
       <div
         className=" shadow shadow-[#1f202b] flex justify-between items-center 
       flex-wrap-reverse w-full lg:w-[80%]   bg-[#1B1C25] rounded p-2"
